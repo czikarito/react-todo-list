@@ -1,4 +1,4 @@
-import { ADD_TODO } from "../actionTypes";
+import { ADD_TODO, COMPLETE_TODO } from "../actionTypes";
 
 const initialState = {
   todos: [
@@ -23,17 +23,22 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      const { id, title, completed } = action;
-      const newTodo = {
-        id,
-        title,
-        completed
-      };
+      const { newTodo } = action;
+
       return {
         ...state,
         todos: [...state.todos, newTodo]
-      }
+      };
 
+    case COMPLETE_TODO:
+      const editedTodos = state.todos.map(item =>
+        item.id === action.id ? { ...item, completed: true } : item
+      );
+
+      return {
+        ...state,
+        todos: editedTodos
+      }
   default:
     return state
   }

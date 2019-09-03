@@ -2,25 +2,15 @@ import React, { Component } from 'react';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 import { connect } from 'react-redux'
-import { addTodo } from '../redux/actions/todoContainerActions';
+import { addTodo, completeTodo } from '../redux/actions/todoContainerActions';
 
 class TodoContainer extends Component {
-  _handleCompleteTodo = () => (id) => {
-    const editedTodods = this.state.items.map(item =>
-      item.id === id ? { ...item, completed: true } : item
-    )
-
-    this.setState({
-      items: editedTodods
-    })
-  }
-
   render() {
-    const { todos, addTodo } = this.props;
+    const { todos, addTodo, completeTodo } = this.props;
     return (
       <div>
         <AddTodo onTodoAdd={addTodo}/>
-        <TodoList items={todos} onCompleteTodo={this._handleCompleteTodo()}/>
+        <TodoList items={todos} onCompleteTodo={completeTodo}/>
       </div>
     );
   }
@@ -36,6 +26,9 @@ const mapDispatchToProps = dispatch => {
   return {
     addTodo: value => {
       dispatch(addTodo(value));
+    },
+    completeTodo: id => {
+      dispatch(completeTodo(id));
     }
   }
 }

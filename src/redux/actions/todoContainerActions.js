@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO } from "../actionTypes";
+import { ADD_TODO, COMPLETE_TODO, EDIT_TODO } from "../actionTypes";
 
 export const addTodo = data => {
   return {
@@ -18,3 +18,10 @@ export const completeTodo = (id) => {
     id: id
   }
 };
+
+export const editTodo = item => {
+  return {
+    type: EDIT_TODO,
+    payload: item
+  }
+}

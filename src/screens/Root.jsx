@@ -2,7 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import ScreensTodoList from './Todo/List';
-import ScreensTodoForm from './Todo/Form';
+import ScreensTodoEdit from './Todo/Edit';
+import ScreensTodoAdd from './Todo/Add';
 
 const ScreensRoot = ({ store }) => (
   <Provider store={store}>
@@ -21,8 +22,8 @@ const ScreensRoot = ({ store }) => (
       </div>
       <Switch>
         <Route exact path="/" component={ScreensTodoList} />
-        <Route path="/todo/add" component={ScreensTodoForm} />
-        <Route path="/todo/:id" component={ScreensTodoForm} />
+        <Route path="/todo/add" component={ScreensTodoAdd} />
+        <Route path="/todo/:id" component={ScreensTodoEdit} />
       </Switch>
     </Router>
   </Provider>

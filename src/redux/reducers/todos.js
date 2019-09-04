@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO } from "../actionTypes";
+import { ADD_TODO, COMPLETE_TODO, EDIT_TODO } from "../actionTypes";
 
 const initialState = {
   todos: [
@@ -42,6 +42,18 @@ export default (state = initialState, action) => {
         ...state,
         todos: editedTodos
       }
+
+    case EDIT_TODO:
+      const { payload: { id, title, author } } = action;
+      const newTodos = state.todos.map(item =>
+        item.id === id ? { ...item, title, author } : item
+      );
+
+      return {
+        ...state,
+        todos: newTodos
+      }
+
   default:
     return state
   }

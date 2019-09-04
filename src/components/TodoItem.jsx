@@ -1,13 +1,25 @@
 import React, { Component } from 'react'
+import { completeTodo } from '../redux/actions/todoContainerActions';
+import { connect } from 'react-redux';
 
-export default class TodoItem extends Component {
+class TodoItem extends Component {
   render() {
-    const { item, onCompleteTodo } = this.props;
+    const { item, completeTodo } = this.props;
 
     return (
-      <li onClick={() => onCompleteTodo(item.id)}>
+      <li onClick={() => completeTodo(item.id)}>
         {item.title}
       </li>
     )
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    completeTodo: id => {
+      dispatch(completeTodo(id));
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(TodoItem);

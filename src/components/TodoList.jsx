@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
 import TodoItem from './TodoItem';
+import { connect } from 'react-redux';
 
-export default class TodoList extends Component {
-  handleCompleteTodo(id) {
-    this.props.onCompleteTodo(id);
-  }
+class TodoList extends Component {
   render() {
     return (
       <div>
-
         <ul>
-          {this.props.items.map((item) =>
+          {this.props.todos.map((item) =>
             !item.completed &&
               <TodoItem
                 item={item}
                 key={item.id}
-                onCompleteTodo={() => this.handleCompleteTodo(item.id)}
               />
           )}
         </ul>
@@ -23,3 +19,11 @@ export default class TodoList extends Component {
     )
   }
 }
+
+const mapStateToProps = ({todos}) => {
+  return {
+    todos
+  }
+}
+
+export default connect(mapStateToProps)(TodoList);

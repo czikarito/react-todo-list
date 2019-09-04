@@ -5,17 +5,20 @@ const initialState = {
     {
       id: 1,
       title: "Clean a room",
-      completed: false
+      completed: false,
+      author: "Pawel"
     },
     {
       id: 2,
       title: "Buy a milk",
-      completed: false
+      completed: false,
+      author: "Karina"
     },
     {
       id: 3,
       title: "Go out with the dog",
-      completed: false
+      completed: false,
+      author: "Pawel"
     }
   ]
 }

@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 
 
 function TodoItem(props) {
+  const { item, completeTodo } = props;
   return (
-    <li onClick={() => props.completeTodo(props.item.id)}>
-    {props.item.title}
+    <li onClick={() => completeTodo(item.id)}>
+      {item.title}
+      &nbsp;
+      {item.author}
   </li>
   )
 }

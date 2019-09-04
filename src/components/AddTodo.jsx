@@ -1,35 +1,46 @@
 import React, { Component } from 'react'
 import { addTodo } from '../redux/actions/todoContainerActions';
 import { connect } from "react-redux";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+
+const TodoFormSchema = Yup.object().shape({
+  value: Yup.string()
+    .max(50, "too long")
+    .required("required"),
+  author: Yup.string()
+  .max(10, "too long")
+  .required("required"),
+})
 
 class AddTodo extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-       value: ""
-    }
-  }
-
-  _handleOnChange = (event) => {
-    this.setState({
-      value: event.target.value
-    })
-  }
-
-  _handleTodoAdd = () => {
-    this.props.addTodo(this.state.value);
-
-    this.setState({
-      value: ""
-    });
-  }
-
   render() {
     return (
       <div>
-        <input type="text" value={this.state.value} onChange={this._handleOnChange}/>
-        <button onClick={() => this._handleTodoAdd()}>Add</button>
+        <Formik
+          initialValues={{
+            value: "",
+            author: ""
+          }}
+          validationSchema={TodoFormSchema}
+          onSubmit={(values, { resetForm }) => {
+            this.props.addTodo(values);
+            resetForm();
+          }}
+        >
+
+        {({ errors, touched }) => (
+          <Form>
+            <Field placeholder="Todo value" name="value" />
+            {errors.value && touched.value ? <div>{errors.value}</div> : null}
+            <Field placeholder="author" name="author" />
+            {errors.author && touched.author ? <div>{errors.author}</div> : null}
+            <button type="submit">SUBMIT EVENT</button>
+          </Form>
+        )}
+
+        </Formik>
       </div>
     )
   }

@@ -1,12 +1,13 @@
 import { ADD_TODO, COMPLETE_TODO } from "../actionTypes";
 
-export const addTodo = value => {
+export const addTodo = data => {
   return {
     type: ADD_TODO,
     newTodo: {
       id: Math.random(),
-      title: value,
-      completed: false
+      title: data.value,
+      completed: false,
+      author: data.author
     }
   }
 }

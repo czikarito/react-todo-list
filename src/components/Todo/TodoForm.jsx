@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { addTodo } from '../redux/actions/todoContainerActions';
+import { addTodo } from '../../redux/actions/todoContainerActions';
 import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
+import { withRouter } from 'react-router-dom'
 
 const TodoFormSchema = Yup.object().shape({
   value: Yup.string()
@@ -14,7 +14,7 @@ const TodoFormSchema = Yup.object().shape({
   .required("required"),
 })
 
-class AddTodo extends Component {
+class TodoForm extends Component {
   render() {
     return (
       <div>
@@ -36,7 +36,7 @@ class AddTodo extends Component {
             {errors.value && touched.value ? <div>{errors.value}</div> : null}
             <Field placeholder="author" name="author" />
             {errors.author && touched.author ? <div>{errors.author}</div> : null}
-            <button type="submit">SUBMIT EVENT</button>
+            <button type="submit">Add Todo</button>
           </Form>
         )}
 
@@ -46,7 +46,6 @@ class AddTodo extends Component {
   }
 }
 
-
 const mapDispatchToProps = dispatch => {
   return {
     addTodo: data => {
@@ -55,4 +54,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddTodo);
+export default withRouter(connect(null, mapDispatchToProps)(TodoForm));

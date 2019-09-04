@@ -4,10 +4,6 @@ import App from './App';
 import './index.css';
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import ScreensRoot from './screens/Root';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+ReactDOM.render(<ScreensRoot store={store} />, document.getElementById('root'));

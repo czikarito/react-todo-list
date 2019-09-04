@@ -1,6 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 function TodoList(props) {
   return (
@@ -24,4 +25,4 @@ const mapStateToProps = ({todos}) => {
   }
 }
 
-export default connect(mapStateToProps)(TodoList);
+export default withRouter(connect(mapStateToProps)(TodoList));

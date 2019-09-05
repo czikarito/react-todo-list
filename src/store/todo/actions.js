@@ -5,7 +5,7 @@ export const addTodo = data => {
     type: ADD_TODO,
     newTodo: {
       id: Math.random(),
-      title: data.value,
+      title: data.title,
       completed: false,
       author: data.author
     }

@@ -1,7 +1,7 @@
 import React from 'react';
-import TodoItem from './TodoItem';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import TodoItem from '../TodoItem';
 
 function TodoList(props) {
   return (

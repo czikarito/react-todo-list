@@ -24,9 +24,16 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+
+  switch (type) {
     case ADD_TODO:
-      const { newTodo } = action;
+      const newTodo = {
+        id: Math.random(),
+        title: payload.title,
+        author: payload.author,
+        completed: false
+      };
 
       return {
         ...state,
@@ -35,7 +42,7 @@ export default (state = initialState, action) => {
 
     case COMPLETE_TODO:
       const editedTodos = state.todos.map(item =>
-        item.id === action.id ? { ...item, completed: true } : item
+        item.id === payload ? { ...item, completed: true } : item
       );
 
       return {
@@ -44,9 +51,7 @@ export default (state = initialState, action) => {
       };
 
     case EDIT_TODO:
-      const {
-        payload: { id, title, author }
-      } = action;
+      const { id, title, author } = payload;
       const newTodos = state.todos.map(item =>
         item.id === id ? { ...item, title, author } : item
       );

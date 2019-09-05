@@ -1,27 +1,22 @@
 import { ADD_TODO, COMPLETE_TODO, EDIT_TODO } from './actionTypes';
 
-export const addTodo = data => {
+export const addTodo = payload => {
   return {
     type: ADD_TODO,
-    newTodo: {
-      id: Math.random(),
-      title: data.title,
-      completed: false,
-      author: data.author
-    }
+    payload
   };
 };
 
-export const completeTodo = id => {
+export const completeTodo = payload => {
   return {
     type: COMPLETE_TODO,
-    id: id
+    payload
   };
 };
 
-export const editTodo = item => {
+export const editTodo = payload => {
   return {
     type: EDIT_TODO,
-    payload: item
+    payload
   };
 };

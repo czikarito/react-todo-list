@@ -1,27 +1,27 @@
-import { ADD_TODO, COMPLETE_TODO, EDIT_TODO } from "../actionTypes";
+import { ADD_TODO, COMPLETE_TODO, EDIT_TODO } from './actionTypes';
 
 const initialState = {
   todos: [
     {
       id: 1,
-      title: "Clean a room",
+      title: 'Clean a room',
       completed: false,
-      author: "Pawel"
+      author: 'Pawel'
     },
     {
       id: 2,
-      title: "Buy a milk",
+      title: 'Buy a milk',
       completed: false,
-      author: "Karina"
+      author: 'Karina'
     },
     {
       id: 3,
-      title: "Go out with the dog",
+      title: 'Go out with the dog',
       completed: false,
-      author: "Pawel"
+      author: 'Pawel'
     }
   ]
-}
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -41,10 +41,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         todos: editedTodos
-      }
+      };
 
     case EDIT_TODO:
-      const { payload: { id, title, author } } = action;
+      const {
+        payload: { id, title, author }
+      } = action;
       const newTodos = state.todos.map(item =>
         item.id === id ? { ...item, title, author } : item
       );
@@ -52,10 +54,9 @@ export default (state = initialState, action) => {
       return {
         ...state,
         todos: newTodos
-      }
+      };
 
-  default:
-    return state
+    default:
+      return state;
   }
-}
-
+};

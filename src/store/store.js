@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
-import todos from './reducers/todos';
+import { todo } from './reducers';
 
 export default createStore(
-  todos,
+  todo,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

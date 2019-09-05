@@ -12,21 +12,21 @@ const ScreensRoot = ({ store }) => (
         <nav>
           <ul>
             <li>
-              <Link to="/">Todo List</Link>
+              <Link to='/'>Todo List</Link>
             </li>
             <li>
-              <Link to="/todo/add">Add Todo</Link>
+              <Link to='/todo/add'>Add Todo</Link>
             </li>
           </ul>
         </nav>
       </div>
       <Switch>
-        <Route exact path="/" component={ScreensTodoList} />
-        <Route path="/todo/add" component={ScreensTodoAdd} />
-        <Route path="/todo/:id" component={ScreensTodoEdit} />
+        <Route exact path='/' component={ScreensTodoList} />
+        <Route path='/todo/add' component={ScreensTodoAdd} />
+        <Route path='/todo/:id' component={ScreensTodoEdit} />
       </Switch>
     </Router>
   </Provider>
-)
+);
 
 export default ScreensRoot;

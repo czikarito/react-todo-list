@@ -7,10 +7,10 @@ export const addTodo = payload => {
   };
 };
 
-export const completeTodo = payload => {
+export const completeTodo = id => {
   return {
     type: COMPLETE_TODO,
-    payload
+    payload: { id }
   };
 };
 

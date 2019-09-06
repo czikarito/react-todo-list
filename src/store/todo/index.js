@@ -1,6 +1,6 @@
 import { ADD_TODO, COMPLETE_TODO, EDIT_TODO } from './actionTypes';
 
-const initialState = {
+export const initialState = {
   todos: [
     {
       id: 1,
@@ -42,7 +42,7 @@ export default (state = initialState, action) => {
 
     case COMPLETE_TODO:
       const editedTodos = state.todos.map(item =>
-        item.id === payload ? { ...item, completed: true } : item
+        item.id === payload.id ? { ...item, completed: true } : item
       );
 
       return {

@@ -1,14 +1,12 @@
 import React from 'react';
-import { completeTodo } from '../../../store/todo/actions';
-import { connect } from 'react-redux';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function TodoItem(props) {
-  const { item, completeTodo } = props;
+  const { item, onCompleteTodo } = props;
   return (
     <li>
-      <div className='item-title' onClick={() => completeTodo(item.id)}>
-        {item.title}
+      <div className='item-title' onClick={() => onCompleteTodo(item.id)}>
+        <h3>{item.title}</h3>
       </div>
       &nbsp;
       <div className='item-author'>{item.author}</div>
@@ -20,17 +18,4 @@ function TodoItem(props) {
   );
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    completeTodo: id => {
-      dispatch(completeTodo(id));
-    }
-  };
-};
-
-export default withRouter(
-  connect(
-    null,
-    mapDispatchToProps
-  )(TodoItem)
-);
+export default TodoItem;

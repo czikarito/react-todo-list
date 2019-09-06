@@ -1,40 +1,42 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import TodoItem from '.';
-import configureStore from 'redux-mock-store';
-import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
-
-const completeTodo = jest.fn();
-const mockStore = configureStore([]);
-
-const item = {
-  title: 'Title',
-  id: '1',
-  author: 'Pawel',
-  completed: false
-};
+// import configureStore from 'redux-mock-store';
 
 describe('Shallow rendered todo item', () => {
-  let store;
-  let component;
-  beforeEach(() => {
-    store = mockStore({
-      completeTodo
-    });
+  const onCompleteTodo = jest.fn();
+  const props = {
+    item: {
+      title: 'Title',
+      id: '2',
+      author: 'Pawel',
+      completed: false
+    },
+    onCompleteTodo
+  };
+  // let store;
 
-    component = shallow(
-      <Provider store={store}>
-        <TodoItem item={item} />
-      </Provider>
-    );
+  // beforeEach(() => {
+  //   const mockStore = configureStore();
+  //   store = mockStore({
+  //     completeTodo
+  //   });
+  // });
+
+  it('should render item title and author', () => {
+    const enzymeWrapper = shallow(<TodoItem {...props} />);
+
+    expect(enzymeWrapper.find('.item-title').text()).toBe(props.item.title);
+    expect(enzymeWrapper.find('.item-author').text()).toBe(props.item.author);
   });
 
-  it('should render with given state from Redux store', () => {
-    const button = component.find('button');
-    button.simulate('click');
-    console.log(button);
-    expect(component).toMatchSnapshot();
+  it('should call completeTodo on title  click', () => {
+    const enzymeWrapper = shallow(<TodoItem {...props} />);
+
+    const title = enzymeWrapper.find('.item-title');
+    title.simulate('click');
+
+    expect(onCompleteTodo).toHaveBeenCalled();
   });
 
   // it('should render todo title and author', () => {

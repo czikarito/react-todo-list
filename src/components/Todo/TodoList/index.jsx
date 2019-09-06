@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import TodoItem from '../TodoItem';
+import { completeTodo } from '../../../store/todo/actions';
 
-function TodoList(props) {
-  return (
-    <div>
-      <ul>
-        {props.todos.map(
-          item => !item.completed && <TodoItem item={item} key={item.id} />
-        )}
-      </ul>
-    </div>
-  );
+class TodoList extends PureComponent {
+  handleCompleteTodo = id => {
+    this.props.completeTodo(id);
+  };
+
+  render() {
+    return (
+      <div>
+        <ul>
+          {this.props.todos.map(
+            item =>
+              !item.completed && (
+                <TodoItem
+                  item={item}
+                  key={item.id}
+                  onCompleteTodo={this.handleCompleteTodo}
+                />
+              )
+          )}
+        </ul>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = ({ todos }) => {
@@ -21,4 +34,15 @@ const mapStateToProps = ({ todos }) => {
   };
 };
 
-export default withRouter(connect(mapStateToProps)(TodoList));
+const mapDispatchToProps = dispatch => {
+  return {
+    completeTodo: id => {
+      dispatch(completeTodo(id));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);

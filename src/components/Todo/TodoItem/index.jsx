@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function TodoItem(props) {
   const { item, onCompleteTodo } = props;
   return (
-    <li>
+    <li className='todo'>
       <div className='item-title' onClick={() => onCompleteTodo(item.id)}>
         <h3>{item.title}</h3>
       </div>

@@ -38,12 +38,4 @@ describe('Shallow rendered todo item', () => {
 
     expect(onCompleteTodo).toHaveBeenCalled();
   });
-
-  // it('should render todo title and author', () => {
-  //   const wrapper = shallow(
-  //     <TodoItem item={props.item} completeTodo={completeTodo} />
-  //   );
-  //   console.log('dupa', wrapper.text());
-  //   expect(wrapper.find('.todo-item')).toBeTruthy();
-  // });
 });

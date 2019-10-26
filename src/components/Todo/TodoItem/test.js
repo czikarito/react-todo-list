@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import TodoItem from '.';
-// import configureStore from 'redux-mock-store';
 
 describe('Shallow rendered todo item', () => {
   const onCompleteTodo = jest.fn();
@@ -14,14 +13,6 @@ describe('Shallow rendered todo item', () => {
     },
     onCompleteTodo
   };
-  // let store;
-
-  // beforeEach(() => {
-  //   const mockStore = configureStore();
-  //   store = mockStore({
-  //     completeTodo
-  //   });
-  // });
 
   it('should render item title and author', () => {
     const enzymeWrapper = shallow(<TodoItem {...props} />);

@@ -6,11 +6,14 @@ import ScreensTodoList from './Todo/List';
 import ScreensTodoEdit from './Todo/Edit';
 import ScreensTodoAdd from './Todo/Add';
 import Header from '../components/shared/Header';
+import WithBorder from '../components/shared/WithBorder';
+
+const BorderHeader = WithBorder(Header);
 
 const ScreensRoot = ({ store }) => (
   <Provider store={store}>
     <BrowserRouter>
-      <Header />
+      <BorderHeader />
       <Switch>
         <Route exact path='/' component={ScreensTodoList} />
         <Route path='/todo/add' component={ScreensTodoAdd} />

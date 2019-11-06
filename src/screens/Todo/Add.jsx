@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { addTodo } from '../../store/todo/actions';
 import TodoForm from '../../components/Todo/TodoForm';
+import { UserList } from '../../components/UserList';
 
 class ScreensTodoAdd extends PureComponent {
   handleSave = data => {
@@ -11,7 +12,12 @@ class ScreensTodoAdd extends PureComponent {
   };
 
   render() {
-    return <TodoForm onSave={this.handleSave} />;
+    return (
+      <div>
+        <TodoForm onSave={this.handleSave} />
+        <UserList />
+      </div>
+    );
   }
 }
 

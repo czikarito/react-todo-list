@@ -29,4 +29,20 @@ describe('Shallow rendered todo item', () => {
 
     expect(onCompleteTodo).toHaveBeenCalled();
   });
+
+  it('should not update component', () => {
+    const enzymeWrapper = shallow(<TodoItem {...props} />);
+
+    expect(enzymeWrapper.instance().shouldComponentUpdate(props, {})).toEqual(
+      false
+    );
+  });
+
+  it('should update component', () => {
+    const enzymeWrapper = shallow(<TodoItem {...props} />);
+
+    expect(
+      enzymeWrapper.instance().shouldComponentUpdate({ item: {} }, {})
+    ).toEqual(true);
+  });
 });

@@ -3,15 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "formik": "^1.5.8",
+    "lodash": "^4.17.15",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "0.9.x"
+    "react-redux": "7.0.3",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "0.9.x",
+    "react-test-renderer": "^16.9.0",
+    "redux": "^4.0.1",
+    "yup": "^0.27.0"
   },
-  "devDependencies": {},
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "redux-mock-store": "^1.5.3"
   }
 }

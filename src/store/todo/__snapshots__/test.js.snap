@@ -1,0 +1,24 @@
+exports[`todo reducer should return initial state 1`] = `
+Object {
+  "todos": Array [
+    Object {
+      "author": "Pawel",
+      "completed": false,
+      "id": 1,
+      "title": "Clean a room",
+    },
+    Object {
+      "author": "Karina",
+      "completed": false,
+      "id": 2,
+      "title": "Buy a milk",
+    },
+    Object {
+      "author": "Pawel",
+      "completed": false,
+      "id": 3,
+      "title": "Go out with the dog",
+    },
+  ],
+}
+`;

@@ -1,0 +1,299 @@
+exports[`test renders snapshot correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Header />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <nav>
+        <ul>
+                <li
+                        className="home">
+                        <Link
+                                to="/">
+                                Todo List
+                        </Link>
+                </li>
+                <li>
+                        <Link
+                                to="/todo/add">
+                                Add Todo
+                        </Link>
+                </li>
+        </ul>
+</nav>,
+      "className": "topnav",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <ul>
+          <li
+                    className="home">
+                    <Link
+                              to="/">
+                              Todo List
+                    </Link>
+          </li>
+          <li>
+                    <Link
+                              to="/todo/add">
+                              Add Todo
+                    </Link>
+          </li>
+</ul>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="home">
+              <Link
+                            to="/">
+                            Todo List
+              </Link>
+</li>,
+            <li>
+              <Link
+                            to="/todo/add">
+                            Add Todo
+              </Link>
+</li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Link
+                to="/">
+                Todo List
+</Link>,
+              "className": "home",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Todo List",
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Todo List",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Link
+                to="/todo/add">
+                Add Todo
+</Link>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Add Todo",
+                "to": "/todo/add",
+              },
+              "ref": null,
+              "rendered": "Add Todo",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+      "type": "nav",
+    },
+    "type": "header",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <nav>
+          <ul>
+                    <li
+                              className="home">
+                              <Link
+                                        to="/">
+                                        Todo List
+                              </Link>
+                    </li>
+                    <li>
+                              <Link
+                                        to="/todo/add">
+                                        Add Todo
+                              </Link>
+                    </li>
+          </ul>
+</nav>,
+        "className": "topnav",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ul>
+            <li
+                        className="home">
+                        <Link
+                                    to="/">
+                                    Todo List
+                        </Link>
+            </li>
+            <li>
+                        <Link
+                                    to="/todo/add">
+                                    Add Todo
+                        </Link>
+            </li>
+</ul>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="home">
+                <Link
+                                to="/">
+                                Todo List
+                </Link>
+</li>,
+              <li>
+                <Link
+                                to="/todo/add">
+                                Add Todo
+                </Link>
+</li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Link
+                  to="/">
+                  Todo List
+</Link>,
+                "className": "home",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Todo List",
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": "Todo List",
+                "type": [Function],
+              },
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <Link
+                  to="/todo/add">
+                  Add Todo
+</Link>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Add Todo",
+                  "to": "/todo/add",
+                },
+                "ref": null,
+                "rendered": "Add Todo",
+                "type": [Function],
+              },
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+        "type": "nav",
+      },
+      "type": "header",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;
